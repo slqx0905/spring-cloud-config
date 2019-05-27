@@ -1,0 +1,54 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: sparksession
+  datasource:
+    url: jdbc:mysql://47.103.96.236:8066/mycat_db01?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&autoReconnect=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+  data:
+    mongodb:
+      uri: mongodb://47.103.46.27:27017/stu?readPreference=secondaryPreferred
+  rabbitmq:
+    host: 47.103.47.188
+    port: 15672
+    username: guest
+    password: guest
+  redis:
+    cluster:
+      nodes:
+        - 47.103.46.27:7001
+        - 47.103.46.27:7002
+        - 47.103.96.236:7001
+        - 47.103.96.236:7002
+        - 106.14.167.122:7001
+        - 106.14.167.122:7002
+      max-redirects: 3
+    timeout: 10000
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 10
+        min-idle: 3
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://172.17.0.4:6868/eureka/
+mybatis:
+  mapper-locations: classpath:com.witsion.sparksession.mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.witsion.sparksession.pojo
+logging:
+  level:
+    com.witsion.sparksession.mapper: debug
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
