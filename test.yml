@@ -1,0 +1,21 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: feign-one
+  datasource:
+    url: jdbc:mysql://rm-bp1dzja9mh0p74un4xo.mysql.rds.aliyuncs.com/order?characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Jx55999678
+  jpa:
+    show-sql: true
+  data:
+    mongodb:
+      uri: mongodb://47.103.46.27:27017/stu?readPreference=secondaryPreferred
+eureka:
+  client:
+    service-url:
+      defaultZone: http://sshcloud.cn:6869/eureka/,http://106.14.167.122:6870/eureka/
+  instance:
+    prefer-ip-address: true
