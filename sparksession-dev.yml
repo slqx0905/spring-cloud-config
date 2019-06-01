@@ -10,6 +10,9 @@ spring:
     password: 123456
   jpa:
     show-sql: true
+  data:
+    mongodb:
+      uri: mongodb://user:123456@47.103.46.27:27017/test?readPreference=secondaryPreferred
   rabbitmq:
     host: 47.103.47.188
     port: 15672
