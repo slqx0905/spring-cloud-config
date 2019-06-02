@@ -12,7 +12,7 @@ spring:
     show-sql: true
   data:
     mongodb:
-      uri: mongodb://user:123456@47.103.46.27:27017/test?readPreference=secondaryPreferred
+      uri: mongodb://shilin:123456@dds-uf625cb861ee57d41749-pub.mongodb.rds.aliyuncs.com:3717,dds-uf625cb861ee57d42404-pub.mongodb.rds.aliyuncs.com:3717,dds-uf625cb861ee57d43547-pub.mongodb.rds.aliyuncs.com:3717,dds-uf625cb861ee57d44752-pub.mongodb.rds.aliyuncs.com:3717,dds-uf625cb861ee57d45715-pub.mongodb.rds.aliyuncs.com:3717,dds-uf625cb861ee57d46289-pub.mongodb.rds.aliyuncs.com:3717/test?replicaSet=mgset-15204901
   rabbitmq:
     host: 47.103.47.188
     port: 15672
