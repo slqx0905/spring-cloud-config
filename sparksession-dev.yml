@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: sparksession
+  security:
+    user:
+      name: shilin...
+      password: 12345678
   datasource:
     url: jdbc:mysql://47.103.96.236:8066/mycat_db01?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&autoReconnect=true
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -35,11 +39,11 @@ spring:
         max-idle: 10
         min-idle: 3
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://shilin...@12345678@127.0.0.1:8080/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:8080/eureka/
+  instance:
+    prefer-ip-address: true
 mybatis:
   mapper-locations: classpath:com.witsion.sparksession.mapper/*.xml
   configuration:
